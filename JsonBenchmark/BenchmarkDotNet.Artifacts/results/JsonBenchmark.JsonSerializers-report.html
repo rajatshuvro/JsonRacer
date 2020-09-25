@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>JsonBenchmark.JsonSerializers-20200925-083639</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.12.1, OS=macOS Catalina 10.15.6 (19G2021) [Darwin 19.6.0]
+Intel Core i9-9880H CPU 2.30GHz, 1 CPU, 16 logical and 8 physical cores
+.NET Core SDK=3.1.102
+  [Host]     : .NET Core 3.1.2 (CoreCLR 4.700.20.6602, CoreFX 4.700.20.6702), X64 RyuJIT
+  DefaultJob : .NET Core 3.1.2 (CoreCLR 4.700.20.6602, CoreFX 4.700.20.6702), X64 RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>            Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Ratio</th><th>RatioSD</th><th>Rank</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Utf8JsonSerializer</td><td>1.646 s</td><td>0.0309 s</td><td>0.0665 s</td><td>1.657 s</td><td>0.91</td><td>0.06</td><td>1</td><td>242000.0000</td><td>63000.0000</td><td>3000.0000</td><td>1.87 GB</td>
+</tr><tr><td>NirvanaJsonSerializer</td><td>1.806 s</td><td>0.0358 s</td><td>0.0912 s</td><td>1.770 s</td><td>1.00</td><td>0.00</td><td>2</td><td>441000.0000</td><td>93000.0000</td><td>3000.0000</td><td>3.42 GB</td>
+</tr><tr><td>SystemTextJsonSerializer</td><td>2.252 s</td><td>0.0341 s</td><td>0.0407 s</td><td>2.239 s</td><td>1.25</td><td>0.07</td><td>3</td><td>248000.0000</td><td>64000.0000</td><td>3000.0000</td><td>1.91 GB</td>
+</tr><tr><td>NewtonSoftSerializer</td><td>3.150 s</td><td>0.0281 s</td><td>0.0249 s</td><td>3.156 s</td><td>1.72</td><td>0.09</td><td>4</td><td>381000.0000</td><td>94000.0000</td><td>3000.0000</td><td>2.95 GB</td>
+</tr></tbody></table>
+</body>
+</html>
